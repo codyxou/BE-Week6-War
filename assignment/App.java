@@ -37,7 +37,7 @@ public class App {
         
         //War Game
         
-        //set round count
+        //set round count. For loop with numCards*2 as the parameter so it goes through all 52 cards.
         int round = 1;
 		for (int i =0; i< numCards*2; i++) {
 			
@@ -47,8 +47,8 @@ public class App {
 			Card player2Card = player2.flip();
 			
 			if(player1Card.getValue() > player2Card.getValue()) {
-				System.out.println("Player 1 plays " + player1Card + " and Player 2 plays " + player2Card);
-				System.out.println("Player 1 wins this round");
+				System.out.println(player.getName() + " plays " + player1Card + " " + player2.getName() + " plays " + player2Card);
+				System.out.println(player.getName() + " wins this round");
 				player.incrementScore();
 				System.out.println("Round: "+ round + " Player 1 Score: " + player.getScore() + " Player 2 Score: " + player2.getScore());
 				
@@ -56,8 +56,8 @@ public class App {
 				System.out.println("-------------------------------------------");
 				
 			} else if (player1Card.getValue() < player2Card.getValue()) {
-				System.out.println("Player 1 plays " + player1Card + " and Player 2 plays " + player2Card);
-				System.out.println("Player 2 wins this round");
+				System.out.println(player.getName() + " plays " + player1Card + " " + player2.getName() + " plays " + player2Card);
+				System.out.println(player2.getName() + " wins this round");
 				player2.incrementScore();
 				System.out.println("Round: "+ round + " Player 1 Score: " + player.getScore() + " Player 2 Score: " + player2.getScore());
 				System.out.println("-------------------------------------------");
@@ -74,12 +74,12 @@ public class App {
 		}
 		}
 		
-		//Overall who wins Logic
+		//Overall who wins Logic. Added the names of the players to make the game feel more personal 
 		
 		if (player.getScore() > player2.getScore()) {
-			System.out.println("Player 1 wins the War!");
+			System.out.println(player.getName() + " wins the War!");
 		} else if (player2.getScore() > player.getScore()) {
-			System.out.println("Player 2 wins the War!");
+			System.out.println(player2.getName() + " wins the War!");
 		} else {
 			System.out.println("Tie!");
 		}
